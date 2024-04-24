@@ -22,10 +22,10 @@ public class ThisTest {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		ThisTest t = new ThisTest();
-		t.first();			// 메시지 호출, ThisTest에 속하는 내부 클래스 
+		ThisTest exam = new ThisTest();
+		exam.first();			// 메시지 호출, ThisTest에 속하는 내부 클래스 
 							// main의 local영역에 t스택 프레임 생성, 호출할 때마다 스택에 새로운 스택 프레임이 생성됨
-		System.out.println(t.i);
+		System.out.println(exam.i);
 		
 		Student s = new Student();
 //		s.i;			// ThisTest에 속하지 않은 외부 클래스

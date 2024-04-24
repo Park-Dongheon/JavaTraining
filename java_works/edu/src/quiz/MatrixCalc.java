@@ -1,6 +1,24 @@
 package quiz;
+/*
+ * M*N 행렬의 값을 랜덤으로 입력하고 가로 세로의 합을 출력하세요
+ * 실행 예
+	입력
+		1	2	3
+		4	5	6
+		7	8	9
+	출력
+		1 + 2 + 3 = 6 		1 + 4 + 7 = 12
+		4 + 5 + 6 = 15	 	2 + 5 + 8 = 15
+		7 + 8 + 9 = 24		3 + 6 + 9 = 18
+*/
 
-import java.util.Scanner;
+
+
+import java.util.Scanner;												/*
+																			Java에서 java.util 패키지는 유용한 유틸리티 클래스를 제공, 여기서 Scanner는 입력을 읽기 위한 클래스
+																			import 문은 현재 파일이나 클래스에서 Scanner 클래스를 사용할 수 있도록 Java 컴파일러에게 알려줌 
+																			그러면 코드 내에서 Scanner 클래스를 사용할 때마다 패키지 이름까지 모두 지정할 필요가 없어짐.
+ 																		*/
 
 public class MatrixCalc {												// MatrixCalc라는 이름의 public 클래스를 정의, 접근 제어자가 public 이므로 다른 패키지에서 접근 가능 
 
