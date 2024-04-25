@@ -14,8 +14,13 @@ public class Program {
 //		mc.work(true);										// MatrixCalc 클래스의 인스턴스인 mc에 속한 work 메소드를 호출, work 메소드 내에서는 true라는 boolean 값을 인수로 받음
 		
 		
-		PrimeNumber1 pn1 = new PrimeNumber1();
-		pn1.work(true);
+//		PrimeNumber1 pn1 = new PrimeNumber1();
+//		pn1.work(true);
+		
+		PrimeNumber2 pn2 = new PrimeNumber2();
+		pn2.work(true);
+		
+		
 	}
 
 }
