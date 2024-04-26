@@ -37,12 +37,12 @@ class Student extends Person {
 
 	}
 }
-class Employee extends Person {
+class Employee1 extends Person {
 	int eno;
 	String dept;
 	int salary;
 	
-	public Employee(int pid, String name, int age, int eno, String dept, int salary) {
+	public Employee1(int pid, String name, int age, int eno, String dept, int salary) {
 		// TODO Auto-generated constructor stub
 		super(pid, name, age);
 		this.eno = eno;
@@ -67,8 +67,8 @@ public class 제출과제_7장_클래스작성 {
 		Person arr[] = new Person[5];
       arr[0] = new Student(1, "Kim", 20, 1001, "Computer Science", 3);
       arr[1] = new Student(2, "Lee", 21, 1002, "Mathematics", 2);
-      arr[2] = new Employee(3, "Park", 30, 2001, "HR", 3000);
-      arr[3] = new Employee(4, "Choi", 35, 2002, "Engineering", 4000);
+      arr[2] = new Employee1(3, "Park", 30, 2001, "HR", 3000);
+      arr[3] = new Employee1(4, "Choi", 35, 2002, "Engineering", 4000);
       arr[4] = new Student(5, "Kang", 22, 1003, "Physics", 4);
 		for(Person p : arr) {
 			System.out.println(p.toString());

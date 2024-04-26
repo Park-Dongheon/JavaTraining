@@ -1,4 +1,4 @@
-package com.ruby.java.ch07.abstraction;
+package com.ruby.java.ch08.polymorphism;
 
 abstract class Employee {					// 추상메서드를 포함한 클래스 == 추상클래스
 	String name;
@@ -11,6 +11,8 @@ abstract class Employee {					// 추상메서드를 포함한 클래스 == 추�
 
 class Salesman extends Employee{
 
+	public int annual_sales;
+
 	public void calcSalary() {										// 추상클래스를 구현함, overriding
 		System.out.println("Salesman 급여 = 기본금 + 판매수당");
 	}
@@ -21,6 +23,8 @@ class Salesman extends Employee{
 }
 
 class Consultant extends Employee {
+	public int num_project;
+
 	public void calcSalary() {
 		System.out.println("Consultant 급여 = 기본급 + 컨설팅 특별 수당�");
 	}
@@ -31,6 +35,8 @@ class Consultant extends Employee {
 }
 
 class Manager extends Employee {					// 추상 메소드를 모두 정의 하지 않았으므로 추상 클래스
+	public int num_team;
+
 	public void calcSalary() {
 		System.out.println("Manager 급여 = 기본급 + 팀 성과 수당");
 	}
