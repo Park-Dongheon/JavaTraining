@@ -13,7 +13,7 @@ public class Quiz1 {
 		System.out.println("곱: " + i * j);
 		System.out.println("몫: " + i / j);
 		System.out.println("나머지: " + i % j);
-		
+		sc.close();
 	}
 	
 }
