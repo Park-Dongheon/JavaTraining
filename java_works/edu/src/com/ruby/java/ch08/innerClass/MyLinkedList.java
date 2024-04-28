@@ -59,20 +59,18 @@ public class MyLinkedList {
 		myList.print();
 		
 		
-		myList.printReverse();
+//		myList.printReverse();
 		
 	}
 
-	private void printReverse() {					// 양방향 노드 링크
-		// TODO Auto-generated method stub
-		Node rnext = next.link;
-		while(next != null) {
-			System.out.println(next.data);
-			next = next.link;
-			for(int i = 0; i < ;)
-		}
-		
-		
-	}
+//	private void printReverse() {					// 양방향 노드 링크
+//		// TODO Auto-generated method stub
+//		Node rnext = next.link;
+//		while(next != null) {
+//			System.out.println(next.data);
+//			next = next.link;
+//			for(int i = 0; i < ;)
+//		}
+//	}
 	
 }

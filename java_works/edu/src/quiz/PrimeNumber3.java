@@ -43,30 +43,47 @@ public class PrimeNumber3 {
 		return true;
 	}
 	
-	// 각 자리 수가 소수인지 확인하는 메서드
-	public static boolean isPrimeEach(int num) {
-	    int temp = num;
-        while (temp > 0) {
-            int remain = temp % 10;
-            if (!isPrime(remain)) return false;
-            temp /= 10;
-        }
-        return true;
-	}
+	// 각 자리 수가 모두 소수인지 확인하는 메서드							// ex)
+	public static boolean isPrimeEach(int num) {				// num = 773
+	    int temp = num;											// temp = 773
+        while (temp > 0) {										// 반복 773 > 0 {
+            int remain = temp % 10;								//     remain = 773 % 10 = 3;
+            if (!isPrime(remain)) return false;					//     !isPrime(3) == false (isPrime()메소드 호출, 전달하는 인자값이 소수일 경우 true반환, !ture == false이면 한 자리라도 소수가 아님)
+            temp /= 10;											// }
+        }														// 77 > 0 {
+        return true;											//     remain = 77 % 10 = 7;
+	}															//     !isPrime(7) == false;
+																//     temp = 77 / 10 = 7;
+																// }
+																// 7 > 0 {
+																//     remain = 7 % 10 = 7;
+																//     !isPrime(7) == false;
+																//     temp = 7 / 10 = 0;
+																// } 반복문 종료
+																// 각 자리 수가 모두 소수로(true) 조건을 만족 하면, 호출한 메소드에 true 값 반환
+			
+			
 	
-	// 주어진 수와 해당 수의 각 자리수를 출력하는 메서드
-	private void printPrime(int num) {
-		// TODO Auto-generated method stub
-        System.out.print(num + " => ");
-        int temp = num;
-        while (temp > 0) {
-            System.out.print(temp + ", ");
-            temp /= 10;
-        }
-        System.out.println(" 모두 소수");
-	}
-
-	public void work(boolean flag) {
+	// 주어진 수와 해당 수의 각 자리수를 출력하는 메서드					// ex)
+	private void printPrime(int num) {							
+		// TODO Auto-generated method stub						// num = 773;
+        System.out.print(num + " => ");							// temp = 773;
+        int temp = num;											// 반복 773 > 0 {
+        while (temp > 0) {										//     "773";
+            System.out.print(temp + ", ");						//     temp = 773 / 10 = 77;
+            temp /= 10;											// }
+        }														// 77 > 0 {
+        System.out.println("모두 소수");							//     "77";
+	}															//     77/10 = 7;
+																// }
+																// 7 > 0 {
+																//     "7";
+																//     7/10 = 0;
+																// } 반복문 종료
+																// "모두 소수"
+	
+	
+	public void work(boolean flag) {							// work()메소드가 호출 될 경우, boolean 타입의 인자값이 true일 경우 getPrimeNumber3()메소드 호출
 		// TODO Auto-generated method stub
 		if(flag) getPrimeNumber3();
 	}
