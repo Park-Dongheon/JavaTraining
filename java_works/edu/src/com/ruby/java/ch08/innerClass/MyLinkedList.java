@@ -4,7 +4,7 @@ public class MyLinkedList {
 	
 	
 	private Node head = null;
-	private Node tail[] = null;
+//	private Node tail[] = null;
 	
 	private class Node {
 		private String data;
