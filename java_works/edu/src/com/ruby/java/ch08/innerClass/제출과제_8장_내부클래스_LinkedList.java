@@ -1,5 +1,7 @@
 package com.ruby.java.ch08.innerClass;
 
+import java.util.Scanner;
+
 public class 제출과제_8장_내부클래스_LinkedList {
 
 	private Node head;
@@ -74,10 +76,8 @@ public class 제출과제_8장_내부클래스_LinkedList {
 		제출과제_8장_내부클래스_LinkedList myList = new 제출과제_8장_내부클래스_LinkedList();
 		myList.printList();
 
-		myList.add("JAVA");
-		myList.add("HTML");
-		myList.add("CSS");
-		myList.add("Javascript");
+		Scanner sc = new Scanner(System.in);
+		myList.add(sc.next());
 		myList.printList();
 		myList.delete("CSS");
 		myList.printList();
