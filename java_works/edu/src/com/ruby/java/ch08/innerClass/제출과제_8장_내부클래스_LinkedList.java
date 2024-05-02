@@ -38,10 +38,10 @@ public class 제출과제_8장_내부클래스_LinkedList {
 	public void printList() {
 		//printList() 결과는 A -> B -> C 등으로 출력한다
 		if(head == null) {
-			System.out.println("data값이 없습니다.");
+			System.out.println("등록된 데이터가 없습니다.");
 		}
 		else {
-			System.out.println("data값은: ");
+			System.out.println("등록된 데이터는 다음과 같습니다: ");
 			Node next = head;
 			while(next != null) {
 				System.out.println(next.data);
@@ -49,22 +49,38 @@ public class 제출과제_8장_내부클래스_LinkedList {
 			}
 		}
 	}
-	
+//	public void add(String data) {
+//		Node newNode = new Node(data);
+//		
+//		if(head == null) {
+//			head = newNode;
+//		}
+//		else {
+//			Node next = head;
+//			while(next.link != null) {
+//				next = next.link;
+//			}
+//			
+//			next.link = newNode;
+//		}
+//	}
 	public void delete(String data) {
+		
 		if(head == null) {
-			System.out.println("data값이 없습니다.");
+			System.out.println("등록된 데이터가 없습니다.");
 		}
 		else {
-			System.out.println("data값은: ");
+//			System.out.println("등록된 데이터는 다음과 같습니다: ");
 			Node next = head;
 			Node tmp = null;
 			while(next != null) {
 				if(next.data == data) {
-					tmp.link = next.link;
+					next.link = tmp;
+					tmp.link = head;
 					return;
 				}
 				tmp = next;
-				tmp.link = next.link;
+				next.link = head.link;
 			}
 			
 			
@@ -78,9 +94,11 @@ public class 제출과제_8장_내부클래스_LinkedList {
 
 		Scanner sc = new Scanner(System.in);
 		myList.add(sc.next());
+		myList.add(sc.next());
+		myList.add(sc.next());
 		myList.printList();
-		myList.delete("CSS");
-		myList.printList();
+//		myList.delete("CSS");
+//		myList.printList();
 	}
 
 }
