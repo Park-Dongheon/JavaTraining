@@ -114,18 +114,18 @@ class TriAngle extends Geometry {
 	
 	static double area(int...arr) {
 		
-		double[] line;
-		for(int i = 0; i < arr.length/2; i++) {
-			line[i] = Math.sqrt(Math.pow(arr[i] - arr[i+1], 2) + Math.pow(arr[i] - y2, 2));
-		}
-		if ( Math.abs((x1 - x2) * (y2 - y3) - (x2 - x3) * (y1 - y2)) <= 0 ) {	
-			return 0.0;
-		}
-		
-		double lineHalf = (line1 + line2 + line3) / 2;					
-		double areaTri = Math.sqrt(lineHalf * (lineHalf - line1) * (lineHalf - line2) * (lineHalf - line3));
-		
-		return areaTri;
+//		double[] line;
+//		for(int i = 0; i < arr.length/2; i++) {
+//			line[i] = Math.sqrt(Math.pow(arr[i] - arr[i+1], 2) + Math.pow(arr[i] - y2, 2));
+//		}
+//		if ( Math.abs((x1 - x2) * (y2 - y3) - (x2 - x3) * (y1 - y2)) <= 0 ) {	
+//			return 0.0;
+//		}
+//		
+//		double lineHalf = (line1 + line2 + line3) / 2;					
+//		double areaTri = Math.sqrt(lineHalf * (lineHalf - line1) * (lineHalf - line2) * (lineHalf - line3));
+//		
+		return 0.0;
 	}
 }
 

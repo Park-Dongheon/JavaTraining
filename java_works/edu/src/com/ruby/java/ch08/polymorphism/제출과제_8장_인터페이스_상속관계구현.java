@@ -3,21 +3,19 @@ package com.ruby.java.ch08.polymorphism;
 interface Shape {
 	public double perimeter();
 	public float area();
-	@Override
 	String toString();
+	public double line();
 }
 
 class Triangle implements Shape {
-	private int x1,y1,x2,y2,x3,y3;
+	private int[] coord;
 	
-	public Triangle(int x1, int y1, int x2, int y2, int x3, int y3) {
+	public Triangle(int...arr) {
 		// TODO Auto-generated constructor stub
-		this.x1 = x1;
-		this.y1 = y1;
-		this.x2 = x2;
-		this.y2 = y2;
-		this.x3 = x3;
-		this.y3 = y3;
+		for(int i = 0; i < arr.length/2; i++) {
+			coord[i] = arr[2 * i];
+			coord[i] = arr[2 * i + 1];
+		}
 	}
 	@Override
 	public double perimeter() { 				//구글링으로 계산식 찾아서 구현
@@ -47,8 +45,15 @@ class Triangle implements Shape {
 	}
 	
 	public String toString() {
-		return "삼각형의 좌표: " + "(" + x1 + "," + y1 + ") " + "(" + x2 + "," + y2 + ") " + "(" + x3 + "," + y3 + ") ";
+		return "삼각형의 좌표: " + "(" + coord[0] + "," + y1 + ") " + "(" + x2 + "," + y2 + ") " + "(" + x3 + "," + y3 + ") ";
 	}
+	
+	@Override
+	public double line() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
 }
 
 
@@ -90,6 +95,12 @@ class Rectangle implements Shape {
 	
 	public String toString() {
 		return "직사각형의 좌표: " + "(" + x1 + "," + y1 + ") " + "(" + x2 + "," + y2 + ") " + "(" + x3 + "," + y3 + ") " + "(" + x4 + "," + y4 + ") ";
+	}
+
+	@Override
+	public double line() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }
 
@@ -180,26 +191,35 @@ class Pentagon implements Shape {
 	public String toString() {
 		return "오각형의 좌표: " + "(" + x1 + "," + y1 + ") " + "(" + x2 + "," + y2 + ") " + "(" + x3 + "," + y3 + ") " + "(" + x4 + "," + y4 + ") " + "(" + x5 + "," + y5 + ") ";
 	}
+
+	@Override
+	public double line() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
 
 
 public class 제출과제_8장_인터페이스_상속관계구현 {
+	public static void printPoly(Shape[] s) {
+		for(Shape v : s) {
+			System.out.println("좌표 = " + v.toString());
+			System.out.println("둘레 길이 = " + v.perimeter());
+			System.out.println("면적 = " + v.area());
+			System.out.println("-".repeat(50));
+		}
+	}
+	
+	
 	public static void main(String[] args) {
 		Shape[]arr = new Shape[4];
 		arr[0] = new Triangle(1, 2, 3, 4, 5, 6);
 		arr[1] = new Rectangle(1, 2, 3, 2, 1, 5, 3, 5);
 		arr[2] = new Square(1, 2, 3, 2, 1, 4, 3, 4, 2);
 		arr[3] = new Pentagon(5, 1, 8, 1, 3, 5, 10, 5, 6, 12);
-		for(Object p : arr) {
-			System.out.println(p.toString());
-		}
-		System.out.println("삼각형 둘레 길이 = " + arr[0].perimeter());
-		System.out.println("삼각형 면적 = " + arr[0].area());
-		System.out.println("직사각형 둘레 길이 = " + arr[1].perimeter());
-		System.out.println("직사각형 면적 = " + arr[1].area());
-		System.out.println("정사각형 둘레 길이 = " + arr[2].perimeter());
-		System.out.println("정사각형 면적 = " + arr[2].area());
-		System.out.println("오각형 둘레 길이 = " + arr[3].perimeter());
-		System.out.println("오각형 면적 = " + arr[3].area());
+		
+		printPoly(arr);
+		
 	}
+	
 }
