@@ -38,11 +38,14 @@ public class PrimeNumber1 {
     	/* for 반복문으로 소수 검사, 입력 자리번째 숫자 검사 ~ 1의 자리수까지 숫자값 전체의 소수 검사 */
 //    	for(int n = 0; n < s.length(); n++) {
 //			if(!isPrime(num)) {
-//				return false;				
-//			} else {
-//				System.out.println(num + "=>" + Integer.parseInt(s.substring(0, n+1)));
+//				if(!isPrime(Integer.parseInt(s.substring(0, n+1)))) {
+//					return false;
+//				}
 //			}
+//			else System.out.print(Integer.parseInt(s.substring(0, n+1)) + ", ");
 //    	}
+//    	System.out.println("모두 소수");
+//		return true;
     	
     	/* while 반복문으로 소수 검사, 입력 자리번째 숫자 검사 ~ 1의 자리수까지 숫자값 전체의 소수 검사 */
     	while(true) {
@@ -52,9 +55,9 @@ public class PrimeNumber1 {
     		if(s.length() < i) {
     			break;
     		}
-    		System.out.println(num + " => " + Integer.parseInt(s.substring(0, i++)));
+    		System.out.print(Integer.parseInt(s.substring(0, i++)) + ", ");
     	}
-    	
+    	System.out.println("모두 소수");
         return true;
         
     }
