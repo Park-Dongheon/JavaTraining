@@ -4,26 +4,27 @@ interface Shape {
 	public double perimeter();
 	public float area();
 	String toString();
-	public double line();
 }
 
 class Triangle implements Shape {
-	private int[] coord;
+	private int x1,y1,x2,y2,x3,y3;
 	
-	public Triangle(int...arr) {
+	public Triangle(int x1, int y1, int x2, int y2, int x3, int y3) {
 		// TODO Auto-generated constructor stub
-		for(int i = 0; i < arr.length/2; i++) {
-			coord[i] = arr[2 * i];
-			coord[i] = arr[2 * i + 1];
-		}
+		this.x1 = x1;
+		this.y1 = y1;
+		this.x2 = x2;
+		this.y2 = y2;
+		this.x3 = x3;
+		this.y3 = y3;
 	}
 	@Override
 	public double perimeter() { 				//구글링으로 계산식 찾아서 구현
-		double sum = 0;
+		double sum = 0.0;
 		
-		double side1 = Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
-		double side2 = Math.sqrt(Math.pow(x2 - x3, 2) + Math.pow(y2 - y3, 2));
-		double side3 = Math.sqrt(Math.pow(x3 - x1, 2) + Math.pow(y3 - y1, 2));
+		double side1 = Math.sqrt(Math.pow((x1 - x2),2) + Math.pow((y1 - y2), 2)); 
+		double side2 = Math.sqrt(Math.pow((x2 - x3),2) + Math.pow((y2 - y3), 2));
+		double side3 = Math.sqrt(Math.pow((x3 - x1),2) + Math.pow((y3 - y1), 2));
 		sum = side1 + side2 + side3;
 		
 		return sum;
@@ -31,9 +32,10 @@ class Triangle implements Shape {
 	
 	@Override
 	public float area() {
-		float side1 = (float) Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
-		float side2 = (float) Math.sqrt(Math.pow(x2 - x3, 2) + Math.pow(y2 - y3, 2));
-		float side3 = (float) Math.sqrt(Math.pow(x3 - x1, 2) + Math.pow(y3 - y1, 2));
+		
+		float side1 = (float) Math.sqrt(Math.pow((x1 - x2),2) + Math.pow((y1 - y2), 2)); 
+		float side2 = (float) Math.sqrt(Math.pow((x2 - x3),2) + Math.pow((y2 - y3), 2));
+		float side3 = (float) Math.sqrt(Math.pow((x3 - x1),2) + Math.pow((y3 - y1), 2));
 		
 		if ( Math.abs((x1 - x2) * (y2 - y3) - (x2 - x3) * (y1 - y2)) <= 0 ) {	
 			return 0.0f;
@@ -45,13 +47,7 @@ class Triangle implements Shape {
 	}
 	
 	public String toString() {
-		return "삼각형의 좌표: " + "(" + coord[0] + "," + y1 + ") " + "(" + x2 + "," + y2 + ") " + "(" + x3 + "," + y3 + ") ";
-	}
-	
-	@Override
-	public double line() {
-		// TODO Auto-generated method stub
-		return 0;
+		return "삼각형의 좌표: " + "(" + x1 + "," + y1 + ") " + "(" + x2 + "," + y2 + ") " + "(" + x3 + "," + y3 + ") ";
 	}
 	
 }
@@ -97,11 +93,6 @@ class Rectangle implements Shape {
 		return "직사각형의 좌표: " + "(" + x1 + "," + y1 + ") " + "(" + x2 + "," + y2 + ") " + "(" + x3 + "," + y3 + ") " + "(" + x4 + "," + y4 + ") ";
 	}
 
-	@Override
-	public double line() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 }
 
 
@@ -192,11 +183,6 @@ class Pentagon implements Shape {
 		return "오각형의 좌표: " + "(" + x1 + "," + y1 + ") " + "(" + x2 + "," + y2 + ") " + "(" + x3 + "," + y3 + ") " + "(" + x4 + "," + y4 + ") " + "(" + x5 + "," + y5 + ") ";
 	}
 
-	@Override
-	public double line() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 }
 
 

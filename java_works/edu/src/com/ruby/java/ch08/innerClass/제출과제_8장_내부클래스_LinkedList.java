@@ -48,29 +48,15 @@ public class 제출과제_8장_내부클래스_LinkedList {
 				next = next.link;
 			}
 		}
+		System.out.println("-".repeat(30));
 	}
-//	public void add(String data) {
-//		Node newNode = new Node(data);
-//		
-//		if(head == null) {
-//			head = newNode;
-//		}
-//		else {
-//			Node next = head;
-//			while(next.link != null) {
-//				next = next.link;
-//			}
-//			
-//			next.link = newNode;
-//		}
-//	}
+
 	public void delete(String data) {
 		
 		if(head == null) {
-			System.out.println("등록된 데이터가 없습니다.");
+			
 		}
 		else {
-//			System.out.println("등록된 데이터는 다음과 같습니다: ");
 			Node next = head;
 			Node tmp = null;
 			while(next != null) {
@@ -82,8 +68,6 @@ public class 제출과제_8장_내부클래스_LinkedList {
 				tmp = next;
 				next.link = head.link;
 			}
-			
-			
 		}
 	}
 	
@@ -97,8 +81,9 @@ public class 제출과제_8장_내부클래스_LinkedList {
 		myList.add(sc.next());
 		myList.add(sc.next());
 		myList.printList();
-//		myList.delete("CSS");
-//		myList.printList();
+		myList.delete("CSS");
+		myList.printList();
+		sc.close();
 	}
 
 }
