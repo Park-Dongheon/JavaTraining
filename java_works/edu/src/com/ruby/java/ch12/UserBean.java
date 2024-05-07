@@ -3,13 +3,11 @@ package com.ruby.java.ch12;
 import java.io.Serializable;
 
 public class UserBean implements Serializable {
-	
-	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 123;
-	
+
 	private String id;
 	private String name;
 	private String tel;

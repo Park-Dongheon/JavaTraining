@@ -20,7 +20,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
-class ListComparator implements Comparator<List<Integer>>{					// 비교, Comparator 인터페이스 클래스 사용
+class ListComparator implements Comparator<List<Integer>>{					// 비교, Comparator 인터페이스 사용
 	@Override
 	public int compare(List<Integer> l1, List<Integer> l2) {
 		Iterator<Integer> ait = l1.iterator();

@@ -35,26 +35,16 @@ public class 제출과제_8장_내부클래스_LinkedList {
 		}
 	}
 	
-	public void printList() {
-		//printList() 결과는 A -> B -> C 등으로 출력한다
-		if(head == null) {
-			System.out.println("등록된 데이터가 없습니다.");
-		}
-		else {
-			System.out.println("등록된 데이터는 다음과 같습니다: ");
-			Node next = head;
-			while(next != null) {
-				System.out.println(next.data);
-				next = next.link;
-			}
-		}
-		System.out.println("-".repeat(30));
+	public void insert(String data) {
+		Node newNode = new Node(data);
+		
+		
 	}
-
+	
 	public void delete(String data) {
 		
 		if(head == null) {
-			
+			return;
 		}
 		else {
 			Node next = head;
@@ -71,8 +61,23 @@ public class 제출과제_8장_내부클래스_LinkedList {
 		}
 	}
 	
+	public void printList() {
+		//printList() 결과는 A -> B -> C 등으로 출력한다
+		if(head == null) {
+			System.out.println("등록된 데이터가 없습니다.");
+		}
+		else {
+			System.out.println("등록된 데이터는 다음과 같습니다: ");
+			Node next = head;
+			while(next != null) {
+				System.out.println(next.data);
+				next = next.link;
+			}
+		}
+		System.out.println("-".repeat(30));
+	}
+	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		제출과제_8장_내부클래스_LinkedList myList = new 제출과제_8장_내부클래스_LinkedList();
 		myList.printList();
 
@@ -83,6 +88,7 @@ public class 제출과제_8장_내부클래스_LinkedList {
 		myList.printList();
 		myList.delete("CSS");
 		myList.printList();
+		
 		sc.close();
 	}
 
