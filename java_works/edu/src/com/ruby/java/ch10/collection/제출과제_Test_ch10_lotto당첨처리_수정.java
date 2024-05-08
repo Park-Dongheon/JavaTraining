@@ -20,7 +20,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
-class ListComparator implements Comparator<List<Integer>>{					// 비교, Comparator 인터페이스 사용
+class ListComparator1 implements Comparator<List<Integer>>{					// 비교, Comparator 인터페이스 사용
 	@Override
 	public int compare(List<Integer> l1, List<Integer> l2) {
 		Iterator<Integer> ait = l1.iterator();
@@ -114,7 +114,7 @@ public class 제출과제_Test_ch10_lotto당첨처리_수정 {
 		for(int i = 0; i < al.size(); i++) {
 			Collections.sort(al.get(i));
 		}
-		al.sort(new ListComparator());
+		al.sort(new ListComparator1());
 		System.out.println("복권 정렬후::lot = " + al);
 
 		//당첨번호 추첨
