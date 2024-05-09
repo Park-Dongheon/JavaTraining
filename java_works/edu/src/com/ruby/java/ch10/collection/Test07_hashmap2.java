@@ -26,7 +26,7 @@ public class Test07_hashmap2 {
 // 방법2
 		for (Map.Entry<String, String> elem : dic.entrySet()) {
 			System.out.println(String.format("%s : %s", elem.getKey(), elem.getValue()));
-		}-
+		}
 
 // 방법3
 		for (String key : dic.keySet()) {
