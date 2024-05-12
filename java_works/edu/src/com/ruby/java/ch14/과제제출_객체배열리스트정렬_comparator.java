@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
 
 class Student {
@@ -50,8 +51,23 @@ public class 과제제출_객체배열리스트정렬_comparator {
 
 // -----------------------------------------------------------------------------------------------------------------------------------
 
-	static void sortStudents() {
-		System.out.println();
+	static void sortStudents(Student[] students) {
+		
+		 // sno를 기준으로 학생들을 비교하는 Comparator 생성
+		Comparator<Student> comparator = new Comparator<Student>() {
+			@Override
+			public int compare(Student s1, Student s2) {
+				Integer sno1 = Integer.parseInt(s1.getSno());
+				Integer sno2 = Integer.parseInt(s2.getSno());
+				return sno1.compareTo(sno2);
+			}
+		};
+		
+		// Comparator를 사용하여 학생 배열 정렬
+		Arrays.sort(students, comparator);
+		// 정렬된 학생 배열 반환
+		return;
+		
 	}
 	
 // -----------------------------------------------------------------------------------------------------------------------------------
@@ -159,9 +175,11 @@ public class 과제제출_객체배열리스트정렬_comparator {
         });
         showStudents("sname 정렬후", sList);
         
-//        //문제5: sortStudents()를 사용한 sArray 정렬 - sno 사용--------------------------------------------------------------------------------------------------
-//        showStudents("sno 정렬전", sArray);
-//        showStudents("sname 정렬후", sArray);
+        //문제5: sortStudents()를 사용한 sArray 정렬 - sno 사용--------------------------------------------------------------------------------------------------
+        System.out.println("문제5: sortStudents()를 사용한 sArray 정렬 - sno 사용");
+        showStudents("sno 정렬전", sArray);
+        sortStudents(sArray);
+        showStudents("sname 정렬후", sArray);
 	}
 
 }
